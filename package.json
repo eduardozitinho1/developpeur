@@ -1,0 +1,14 @@
+{
+  "devDependencies": {
+    "supabase": "^2.121.0"
+  },
+  "name": "developpeur",
+  "version": "1.0.0",
+  "description": "Plataforma de compartilhamento de snippets com React, Vite, Monaco Editor, FastAPI, SQLAlchemy e PostgreSQL no Supabase. A interface está em português, com busca e filtros locais, coleção salva, curtidas, autenticação, publicação de snippets e editor com syntax highlighting.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "type": "commonjs"
+}
