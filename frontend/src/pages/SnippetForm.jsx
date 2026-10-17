@@ -4,9 +4,26 @@ import api from "../api";
 import TagInput from "../components/TagInput";
 
 const LANGUAGES = [
-  "javascript", "typescript", "python", "java", "c", "cpp", "csharp",
-  "go", "rust", "ruby", "php", "swift", "kotlin", "html", "css", "sql",
-  "bash", "json", "yaml", "markdown",
+  "javascript",
+  "typescript",
+  "python",
+  "java",
+  "c",
+  "cpp",
+  "csharp",
+  "go",
+  "rust",
+  "ruby",
+  "php",
+  "swift",
+  "kotlin",
+  "html",
+  "css",
+  "sql",
+  "bash",
+  "json",
+  "yaml",
+  "markdown",
 ];
 
 export default function SnippetForm({ editMode = false }) {
@@ -90,7 +107,9 @@ export default function SnippetForm({ editMode = false }) {
               onChange={(e) => setForm({ ...form, language: e.target.value })}
             >
               {LANGUAGES.map((l) => (
-                <option key={l} value={l}>{l}</option>
+                <option key={l} value={l}>
+                  {l}
+                </option>
               ))}
             </select>
           </label>
@@ -98,7 +117,9 @@ export default function SnippetForm({ editMode = false }) {
             <input
               type="checkbox"
               checked={form.is_public}
-              onChange={(e) => setForm({ ...form, is_public: e.target.checked })}
+              onChange={(e) =>
+                setForm({ ...form, is_public: e.target.checked })
+              }
             />
             Snippet público
           </label>
@@ -106,7 +127,10 @@ export default function SnippetForm({ editMode = false }) {
 
         <label>
           Tags
-          <TagInput value={form.tags} onChange={(tags) => setForm({ ...form, tags })} />
+          <TagInput
+            value={form.tags}
+            onChange={(tags) => setForm({ ...form, tags })}
+          />
         </label>
 
         <label>
@@ -125,11 +149,19 @@ export default function SnippetForm({ editMode = false }) {
         {err && <div className="form-error">{err}</div>}
 
         <div className="form-actions">
-          <button type="button" className="btn-secondary" onClick={() => nav(-1)}>
+          <button
+            type="button"
+            className="btn-secondary"
+            onClick={() => nav(-1)}
+          >
             Cancelar
           </button>
           <button className="btn-primary" disabled={busy}>
-            {busy ? "Salvando..." : editMode ? "Salvar alterações" : "Publicar snippet"}
+            {busy
+              ? "Salvando..."
+              : editMode
+                ? "Salvar alterações"
+                : "Publicar snippet"}
           </button>
         </div>
       </form>

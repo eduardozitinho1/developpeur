@@ -3,7 +3,14 @@ import { Link, useNavigate } from "react-router-dom";
 import api from "../api";
 import { useAuth } from "../auth";
 
-const COLORS = ["#7c5cff", "#ff5c8a", "#5cd0ff", "#ffb85c", "#5cffb1", "#c45cff"];
+const COLORS = [
+  "#7c5cff",
+  "#ff5c8a",
+  "#5cd0ff",
+  "#ffb85c",
+  "#5cffb1",
+  "#c45cff",
+];
 
 export default function Register() {
   const { login } = useAuth();

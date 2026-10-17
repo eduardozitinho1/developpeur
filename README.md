@@ -62,19 +62,19 @@ O frontend é uma aplicação estática e usa rewrite para suportar rotas do Rea
 
 ## Recursos da API
 
-| Método | Rota | Acesso |
-|---|---|---|
-| `GET` | `/health` | Público |
-| `POST` | `/api/auth/register` | Público |
-| `POST` | `/api/auth/login` | Público |
-| `GET` | `/api/auth/me` | Autenticado |
-| `GET` | `/api/snippets` | Público, apenas snippets públicos |
-| `POST` | `/api/snippets` | Autenticado |
-| `GET` | `/api/snippets/{id}` | Público, apenas snippets públicos |
-| `PATCH` | `/api/snippets/{id}` | Autor do snippet |
-| `DELETE` | `/api/snippets/{id}` | Autor do snippet |
-| `POST` | `/api/snippets/{id}/like` | Autenticado |
-| `GET` | `/api/users/{username}` | Público |
+| Método   | Rota                      | Acesso                            |
+| -------- | ------------------------- | --------------------------------- |
+| `GET`    | `/health`                 | Público                           |
+| `POST`   | `/api/auth/register`      | Público                           |
+| `POST`   | `/api/auth/login`         | Público                           |
+| `GET`    | `/api/auth/me`            | Autenticado                       |
+| `GET`    | `/api/snippets`           | Público, apenas snippets públicos |
+| `POST`   | `/api/snippets`           | Autenticado                       |
+| `GET`    | `/api/snippets/{id}`      | Público, apenas snippets públicos |
+| `PATCH`  | `/api/snippets/{id}`      | Autor do snippet                  |
+| `DELETE` | `/api/snippets/{id}`      | Autor do snippet                  |
+| `POST`   | `/api/snippets/{id}/like` | Autenticado                       |
+| `GET`    | `/api/users/{username}`   | Público                           |
 
 A listagem aceita `q`, `language`, `tag`, `author`, `sort` (`trending`, `newest`, `popular`), `limit` e `offset`. Senhas são armazenadas com Argon2; tokens são JWT assinados com HS256; os endpoints de edição e exclusão validam a propriedade do snippet. Os limites de payload são validados por Pydantic.
 

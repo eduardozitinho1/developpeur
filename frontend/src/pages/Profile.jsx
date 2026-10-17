@@ -25,7 +25,9 @@ export default function Profile() {
         setBio(r.data.bio || "");
         setColor(r.data.avatar_color);
       })
-      .catch((e) => setErr(e.response?.data?.detail || "Usuário não encontrado."));
+      .catch((e) =>
+        setErr(e.response?.data?.detail || "Usuário não encontrado."),
+      );
     api
       .get(`/api/snippets?author=${encodeURIComponent(username)}&page_size=24`)
       .then((r) => setSnippets(r.data.items));
@@ -43,24 +45,39 @@ export default function Profile() {
   if (!profile) return <Spinner label="Carregando perfil..." />;
 
   const mine = user?.username === profile.username;
-  const COLORS = ["#7c5cff", "#ff5c8a", "#5cd0ff", "#ffb85c", "#5cffb1", "#c45cff"];
+  const COLORS = [
+    "#7c5cff",
+    "#ff5c8a",
+    "#5cd0ff",
+    "#ffb85c",
+    "#5cffb1",
+    "#c45cff",
+  ];
 
   return (
     <div className="profile">
       <header className="profile-head">
-        <span className="avatar xl" style={{ background: profile.avatar_color }}>
+        <span
+          className="avatar xl"
+          style={{ background: profile.avatar_color }}
+        >
           {profile.username[0]?.toUpperCase()}
         </span>
         <div className="profile-info">
           <h1>@{profile.username}</h1>
           <p className="muted small">
-            Membro desde {new Date(profile.created_at).toLocaleDateString("pt-BR")}
+            Membro desde{" "}
+            {new Date(profile.created_at).toLocaleDateString("pt-BR")}
           </p>
           {!editing ? (
             <p className="profile-bio">{profile.bio || "Sem bio ainda."}</p>
           ) : (
             <div className="profile-edit">
-              <textarea rows={3} value={bio} onChange={(e) => setBio(e.target.value)} />
+              <textarea
+                rows={3}
+                value={bio}
+                onChange={(e) => setBio(e.target.value)}
+              />
               <div className="color-row">
                 {COLORS.map((c) => (
                   <button
@@ -73,14 +90,27 @@ export default function Profile() {
                 ))}
               </div>
               <div className="form-actions">
-                <button className="btn-secondary" onClick={() => setEditing(false)}>Cancelar</button>
-                <button className="btn-primary" onClick={saveProfile}>Salvar</button>
+                <button
+                  className="btn-secondary"
+                  onClick={() => setEditing(false)}
+                >
+                  Cancelar
+                </button>
+                <button className="btn-primary" onClick={saveProfile}>
+                  Salvar
+                </button>
               </div>
             </div>
           )}
           <div className="profile-stats">
-            <div><strong>{profile.snippet_count}</strong><span>snippets</span></div>
-            <div><strong>{profile.star_count}</strong><span>estrelas</span></div>
+            <div>
+              <strong>{profile.snippet_count}</strong>
+              <span>snippets</span>
+            </div>
+            <div>
+              <strong>{profile.star_count}</strong>
+              <span>estrelas</span>
+            </div>
           </div>
         </div>
         {mine && !editing && (
@@ -93,7 +123,9 @@ export default function Profile() {
       <section className="section">
         <div className="section-head">
           <h2>Snippets públicos</h2>
-          <Link to={`/browse?author=${profile.username}`} className="link-more">ver em explorar →</Link>
+          <Link to={`/browse?author=${profile.username}`} className="link-more">
+            ver em explorar →
+          </Link>
         </div>
         {snippets.length === 0 ? (
           <p className="muted">Nenhum snippet público ainda.</p>

@@ -29,25 +29,36 @@ export default function Navbar() {
             placeholder="Buscar snippets, tags, linguagens..."
             aria-label="Buscar"
           />
-          <button type="submit" aria-label="Buscar">↵</button>
+          <button type="submit" aria-label="Buscar">
+            ↵
+          </button>
         </form>
 
         <nav className="nav-links">
           <NavLink to="/browse">Explorar</NavLink>
           {user ? (
             <>
-              <NavLink to="/snippets/new" className="nav-cta">+ Novo snippet</NavLink>
+              <NavLink to="/snippets/new" className="nav-cta">
+                + Novo snippet
+              </NavLink>
               <Link to={`/u/${user.username}`} className="avatar-link">
-                <span className="avatar" style={{ background: user.avatar_color }}>
+                <span
+                  className="avatar"
+                  style={{ background: user.avatar_color }}
+                >
                   {initial}
                 </span>
               </Link>
-              <button className="btn-ghost" onClick={logout}>Sair</button>
+              <button className="btn-ghost" onClick={logout}>
+                Sair
+              </button>
             </>
           ) : (
             <>
               <NavLink to="/login">Entrar</NavLink>
-              <NavLink to="/register" className="nav-cta">Criar conta</NavLink>
+              <NavLink to="/register" className="nav-cta">
+                Criar conta
+              </NavLink>
             </>
           )}
         </nav>

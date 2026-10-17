@@ -5,9 +5,26 @@ import SnippetCard from "../components/SnippetCard";
 import Spinner from "../components/Spinner";
 
 const LANGUAGES = [
-  "javascript", "typescript", "python", "java", "c", "cpp", "csharp",
-  "go", "rust", "ruby", "php", "swift", "kotlin", "html", "css", "sql",
-  "bash", "json", "yaml", "markdown",
+  "javascript",
+  "typescript",
+  "python",
+  "java",
+  "c",
+  "cpp",
+  "csharp",
+  "go",
+  "rust",
+  "ruby",
+  "php",
+  "swift",
+  "kotlin",
+  "html",
+  "css",
+  "sql",
+  "bash",
+  "json",
+  "yaml",
+  "markdown",
 ];
 
 export default function Browse() {
@@ -70,7 +87,9 @@ export default function Browse() {
     <div className="browse">
       <header className="browse-head">
         <h1>Explorar snippets</h1>
-        <p>{meta.total} resultados {author && `de @${author}`}</p>
+        <p>
+          {meta.total} resultados {author && `de @${author}`}
+        </p>
       </header>
 
       <form
@@ -91,16 +110,24 @@ export default function Browse() {
       <div className="filters">
         <div className="filter">
           <span className="filter-label">Linguagem</span>
-          <select value={language} onChange={(e) => update({ language: e.target.value })}>
+          <select
+            value={language}
+            onChange={(e) => update({ language: e.target.value })}
+          >
             <option value="">todas</option>
             {languagesToShow.map((l) => (
-              <option key={l} value={l}>{l}</option>
+              <option key={l} value={l}>
+                {l}
+              </option>
             ))}
           </select>
         </div>
         <div className="filter">
           <span className="filter-label">Ordenar</span>
-          <select value={sort} onChange={(e) => update({ sort: e.target.value })}>
+          <select
+            value={sort}
+            onChange={(e) => update({ sort: e.target.value })}
+          >
             <option value="recent">mais recentes</option>
             <option value="popular">mais estrelas</option>
             <option value="views">mais vistos</option>
@@ -117,7 +144,10 @@ export default function Browse() {
         {author && (
           <div className="filter">
             <span className="filter-label">Autor</span>
-            <button className="filter-chip" onClick={() => update({ author: "" })}>
+            <button
+              className="filter-chip"
+              onClick={() => update({ author: "" })}
+            >
               @{author} ×
             </button>
           </div>

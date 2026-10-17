@@ -33,20 +33,27 @@ export default function Home() {
         <div className="hero-content">
           <span className="hero-eyebrow">plataforma de snippets</span>
           <h1>
-            Código útil. <span className="accent">Encontrado</span>. Reutilizado.
+            Código útil. <span className="accent">Encontrado</span>.
+            Reutilizado.
           </h1>
           <p>
-            Publique, descubra e discuta trechos de código prontos para produção.
-            Um acervo vivo, mantido por quem realmente escreve código.
+            Publique, descubra e discuta trechos de código prontos para
+            produção. Um acervo vivo, mantido por quem realmente escreve código.
           </p>
           <div className="hero-actions">
-            <Link to="/browse" className="btn-primary">Explorar snippets</Link>
-            <Link to="/snippets/new" className="btn-secondary">Publicar snippet</Link>
+            <Link to="/browse" className="btn-primary">
+              Explorar snippets
+            </Link>
+            <Link to="/snippets/new" className="btn-secondary">
+              Publicar snippet
+            </Link>
           </div>
         </div>
         <div className="hero-aside">
           <div className="stat-card">
-            <span className="stat-value">{recent.length + trending.length}</span>
+            <span className="stat-value">
+              {recent.length + trending.length}
+            </span>
             <span className="stat-label">snippets em destaque</span>
           </div>
           <div className="stat-card">
@@ -63,7 +70,9 @@ export default function Home() {
       <section className="section">
         <div className="section-head">
           <h2>Em alta</h2>
-          <Link to="/browse?sort=popular" className="link-more">ver tudo →</Link>
+          <Link to="/browse?sort=popular" className="link-more">
+            ver tudo →
+          </Link>
         </div>
         <div className="snippet-grid">
           {trending.map((s) => (
@@ -75,7 +84,9 @@ export default function Home() {
       <section className="section">
         <div className="section-head">
           <h2>Tags populares</h2>
-          <Link to="/browse" className="link-more">explorar →</Link>
+          <Link to="/browse" className="link-more">
+            explorar →
+          </Link>
         </div>
         <div className="tag-cloud">
           {tags.map((t) => (
@@ -87,7 +98,9 @@ export default function Home() {
       <section className="section">
         <div className="section-head">
           <h2>Recém publicados</h2>
-          <Link to="/browse" className="link-more">ver tudo →</Link>
+          <Link to="/browse" className="link-more">
+            ver tudo →
+          </Link>
         </div>
         <div className="snippet-grid">
           {recent.map((s) => (

@@ -23,7 +23,10 @@ export default function SnippetCard({ snippet }) {
       </div>
       <footer className="snippet-card-foot">
         <Link to={`/u/${snippet.author.username}`} className="author-chip">
-          <span className="avatar sm" style={{ background: snippet.author.avatar_color }}>
+          <span
+            className="avatar sm"
+            style={{ background: snippet.author.avatar_color }}
+          >
             {snippet.author.username[0]?.toUpperCase()}
           </span>
           <span>{snippet.author.username}</span>

@@ -6,6 +6,7 @@ export default function ProtectedRoute({ children }) {
   const { user, ready } = useAuth();
   const loc = useLocation();
   if (!ready) return <Spinner label="Verificando sessão..." />;
-  if (!user) return <Navigate to="/login" state={{ from: loc.pathname }} replace />;
+  if (!user)
+    return <Navigate to="/login" state={{ from: loc.pathname }} replace />;
   return children;
 }

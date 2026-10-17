@@ -23,7 +23,11 @@ export default function TagInput({ value, onChange, placeholder }) {
         {value.map((t) => (
           <span key={t} className="tag-pill">
             #{t}
-            <button type="button" onClick={() => remove(t)} aria-label={`Remover ${t}`}>
+            <button
+              type="button"
+              onClick={() => remove(t)}
+              aria-label={`Remover ${t}`}
+            >
               ×
             </button>
           </span>
