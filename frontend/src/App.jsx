@@ -1390,3 +1390,7 @@ function SnippetModal({ onClose, onSubmit }) {
     </div>
   );
 }
+
+export default App;
+
+export default App;
