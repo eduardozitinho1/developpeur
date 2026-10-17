@@ -1393,4 +1393,3 @@ function SnippetModal({ onClose, onSubmit }) {
 
 export default App;
 
-export default App;
